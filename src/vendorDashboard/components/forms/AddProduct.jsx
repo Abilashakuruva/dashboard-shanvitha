@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import { API_URL} from '../../data/ApiPath'
+import { ThreeCircles } from 'react-loader-spinner'
 
 const AddProduct = () => {
   const[productName,setProductName]=useState("")
@@ -8,6 +9,7 @@ const AddProduct = () => {
   const[bestSeller,setBestSeller]=useState(false)
   const[image,setImage]=useState(null)
   const[description,setDescription]=useState("")
+  const [loading, setLoading] = useState(false);
 
   const handleCategoryChange=(event)=>{
     const value=event.target.value;
@@ -30,6 +32,8 @@ const AddProduct = () => {
 
   const handleAddProduct=async(e)=>{
     e.preventDefault()
+    setLoading(true);
+    
     try {
       const loginToken=localStorage.getItem('loginToken');
       const firmId=localStorage.getItem('firmId')
@@ -56,6 +60,8 @@ const AddProduct = () => {
       const data=await response.json()
 
       if(response.ok){
+        alert('Product added successfully')
+      }
         setProductName("")
         setPrice("")
         setCategory([])
@@ -63,13 +69,14 @@ const AddProduct = () => {
         setDescription("")
         setImage(null)
 
-        alert('Product added successfully')
-      }
+      
 
     } catch (error) {
       console.error(data.message);
       alert('failed to add product');
       
+    }finally{
+      setLoading(false);
     }
 
 
@@ -77,11 +84,25 @@ const AddProduct = () => {
 
   return (
     <div className="productsec">
+       {loading &&
+              <div className="loadersec">
+                <ThreeCircles 
+                visible={loading}
+                  height={100}
+                  width={100}
+                  color='#4fa94d' 
+                  ariaLabel='three-circles-loading'
+                  wrapperClass='' wrapperStyle={{}} />
+                  <p>Please wait, your product is being added...</p>
+                
+              </div>
+      
+            }
 
-      <form className='tableform' onSubmit={handleAddProduct}>
+      {!loading && <form className='tableform' onSubmit={handleAddProduct}>
         <h3>Add Product</h3>
-        <label>Product Name</label><br />
-        <input type='text' value={productName} onChange={(e)=>setProductName(e.target.value)} placeholder='enter your product name' /><br />
+        <label>Product Name</label>
+        <input type='text' value={productName} onChange={(e)=>setProductName(e.target.value)} placeholder='enter your product name' />
         
         {/*<label>Category</label><br/>
                 <input type='text'  /><br/>*/}
@@ -105,8 +126,8 @@ const AddProduct = () => {
           </div>
         </div>
 
-        <label>Price</label><br />
-        <input type='text' value={price} onChange={(e)=>setPrice(e.target.value)} /><br />
+        <label>Price</label>
+        <input type='text' value={price} onChange={(e)=>setPrice(e.target.value)} />
 
 
         {/*<label>Bestseller</label><br />
@@ -129,17 +150,17 @@ const AddProduct = () => {
           </div>
         </div>
 
-        <label>Description</label><br />
-        <input type='text' value={description} onChange={(e)=>setDescription(e.target.value)} /><br />
+        <label>Description</label>
+        <input type='text' value={description} onChange={(e)=>setDescription(e.target.value)} />
 
-        <label>Image</label><br />
-        <input type='file' onChange={handleImageupload} /><br />
+        <label>Image</label>
+        <input type='file' onChange={handleImageupload} />
 
         <div className="btnsubmit">
           <button type='submit'>Submit</button>
         </div>
 
-      </form>
+      </form>}
     </div>
 
   )

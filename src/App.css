@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 body{
-    font-family: "Roboto Condensed", serif;
+    font-family: "Noto Serif", serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,8 +12,7 @@ body{
 .navsec{    
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    font-family: "Roboto Condensed", serif;
+    align-items: center;    
     padding:0 20px;
     background-color: orange;
     color: white;
@@ -24,11 +25,15 @@ body{
     cursor: pointer;
 }
 
+.logout{
+    cursor: pointer;
+}
+
 .sidebarsec{    
     width: 100%;
     max-width: 15%;
     height: 95vh;    
-    font-family: "Roboto Condensed", serif;    
+       
     background-color: rgb(85, 17, 202);
     color: white;
 
@@ -36,6 +41,10 @@ body{
 
 .sidebarsec ul li{
     list-style: none;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: medium;
+    cursor: pointer;
 
 }
 
@@ -47,7 +56,7 @@ body{
 /* login section*/
 
 .loginsec{    
-    font-family: "Roboto Condensed", serif;
+   
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -59,8 +68,8 @@ body{
 .authform{
     border: 1px solid gray;
     width: 100%;
-    max-width: 50%;       
-    font-family: "Roboto Condensed", serif;
+    max-width: 50%;
+    
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -90,7 +99,7 @@ body{
 /* register section*/
 
 .registersec{     
-    font-family: "Roboto Condensed", serif;
+ 
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -102,26 +111,29 @@ body{
 /* firm section*/
 
 .firmsec{    
-    font-family: "Roboto Condensed", serif;
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: 15px;
 
 }
 
 .tableform{
     border: 1px solid gray;
     width: 100%;
-    max-width: 50%;       
-    font-family: "Roboto Condensed", serif;
+    max-width: 50%;   
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     margin-top: -50px;
     border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 43px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 43px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 43px 0px rgba(0,0,0,0.75);
     
 
 }
@@ -129,14 +141,15 @@ body{
 .tableform label{
     width: 100%;
     max-width: 55%;
-    font-weight: 350;  
+    font-weight: 500;  
 
 }
 
 .tableform input{
     width: 100%;
     max-width: 55%;        
-    height: 1.5rem;     
+    height: 1.5rem;
+    margin-bottom: 10px;     
 
 }
 
@@ -184,7 +197,7 @@ body{
 /* product section*/
 
 .productsec{    
-    font-family: "Roboto Condensed", serif;
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -194,6 +207,12 @@ body{
 }
 
 /* allproducts section*/
+.products{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .product-table{
     width:80vw;
@@ -209,14 +228,83 @@ body{
 
 .product-table th{
     text-align: left;
-    background-color: rgb(14, 183, 174);
+    background-color: rgb(8, 214, 22);
     color: white;
 }
 
 .deletebtn{
-    color: red;
+    color: hsl(0, 100%, 50%);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     padding: 10px 20px;
+    
+}
+
+/*not found*/
+
+.errorsec{    
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.errorsec h1{
+    color: red;
+    font-size: 4rem;
+    
+}
+h3{
+    color: red;
+}
+
+/* btn submit */
+.btnsubmit button{
+    background-color: blue;
+    width: 6rem;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.welcomeSec{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.landingimg{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+}
+
+.welcomeSec h2{
+    text-align: center;
+    font-size: 3rem;
+    position: relative;
+    top:-80px;
+    color: rgb(255, 0, 162);
+    
+}
+
+.showPassword{
+    width: fit-content;
+    position: absolute;
+    bottom: 90px;
+    right: 145px;
+    cursor: pointer;
+}
+
+.loadersec{
+    z-index:10000;
 }
