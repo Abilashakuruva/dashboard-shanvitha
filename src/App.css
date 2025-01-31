@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: "Roboto Condensed", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navsec{    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto Condensed", serif;
+    padding:0 20px;
+    background-color: orange;
+    color: white;
+    font-size: large;
+    height: 80px;
+
+}
+
+.userAuth{
+    cursor: pointer;
+}
+
+.sidebarsec{    
+    width: 100%;
+    max-width: 15%;
+    height: 95vh;    
+    font-family: "Roboto Condensed", serif;    
+    background-color: rgb(85, 17, 202);
+    color: white;
+
+}
+
+.sidebarsec ul li{
+    list-style: none;
+
+}
+
+.collectionsec{
+    display: flex;
+
+}
+
+/* login section*/
+
+.loginsec{    
+    font-family: "Roboto Condensed", serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.authform{
+    border: 1px solid gray;
+    width: 100%;
+    max-width: 50%;       
+    font-family: "Roboto Condensed", serif;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -230px;
+    border-radius: 10px;
+    position: relative;    
+    
+    
+}
+
+.authform label{
+    width: 100%;
+    max-width: 55%;
+    font-weight: 400;  
+
+}
+
+.authform input{
+    width: 100%;
+    max-width: 55%;    
+    height: 2rem;
+    font-size: medium;    
+
+}
+
+/* register section*/
+
+.registersec{     
+    font-family: "Roboto Condensed", serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+/* firm section*/
+
+.firmsec{    
+    font-family: "Roboto Condensed", serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+.tableform{
+    border: 1px solid gray;
+    width: 100%;
+    max-width: 50%;       
+    font-family: "Roboto Condensed", serif;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+    border-radius: 10px;
+    
+
+}
+
+.tableform label{
+    width: 100%;
+    max-width: 55%;
+    font-weight: 350;  
+
+}
+
+.tableform input{
+    width: 100%;
+    max-width: 55%;        
+    height: 1.5rem;     
+
+}
+
+.checkinp{   
+    width: 100%;
+    max-width: 55%;
+    display: flex;
+}
+
+.checkinp label{
+    width: 20%;
+    padding-right: 10px;
+}
+
+.inputscontainer{
+    width: 100%;    
+    display: flex;  
+   
+}
+
+.checkboxcontainer{    
+    width: 100%;
+    max-width: 50%;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+
+}
+
+.checkboxcontainer label{
+    width: 100%;
+    font-size: small;
+    
+
+}
+
+.checkboxcontainer input{
+    margin-left:-150px ;
+}
+
+.regboxcontainer label{
+    font-size: small;
+
+}
+/* product section*/
+
+.productsec{    
+    font-family: "Roboto Condensed", serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+/* allproducts section*/
+
+.product-table{
+    width:80vw;
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+.product-table th,
+.product-table td{
+    border: 1px solid gray;
+    padding: 8px;
+}
+
+.product-table th{
+    text-align: left;
+    background-color: rgb(14, 183, 174);
+    color: white;
+}
+
+.deletebtn{
+    color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
